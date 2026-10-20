@@ -1,0 +1,7 @@
+*.kicad_prl
+*.lck
+*-backups/
+.history/
+DRC-review.rpt
+Thumbs.db
+.DS_Store
