@@ -2,7 +2,7 @@
 
 As a chronic deep sleeper, I created AlarmShock to help me wake up on time when standard alarms don't work. The design uses a BMI160 accelerometer and gyroscope to measure wrist movement, an ESP32-S3 controller, and a DRV2605L driver for a vibration motor. The goal is a wrist-worn alarm that combines motion sensing with a physical wake-up signal.
 
-This repository contains the PCB design and its supplied fabrication exports. Firmware and assembled-device test results are not included. Motion-based control and wake-up performance still need to be implemented and tested.
+This repository contains the PCB design and its supplied fabrication exports. Firmware and assembled-device test results are not included. Motion-based control and wake-up performance are not verified by the files in this repository.
 
 ![AlarmShock PCB CAD render](previews/AlarmShock_pcb_3d.jpg)
 
