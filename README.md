@@ -6,7 +6,7 @@ This repository contains the PCB design and its supplied fabrication exports. Fi
 
 ![AlarmShock PCB CAD render](previews/AlarmShock_pcb_3d.jpg)
 
-*3D render of the saved PCB, not a hardware photograph. Some component body models are absent.*
+*Some component body models are absent.*
 
 ## Hardware
 
