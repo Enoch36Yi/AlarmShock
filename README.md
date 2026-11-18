@@ -2,11 +2,7 @@
 
 As a chronic deep sleeper, I created AlarmShock to help me wake up on time when standard alarms don't work. The design uses a BMI160 accelerometer and gyroscope to measure wrist movement, an ESP32-S3 MCU, and a DRV2605L driver for a vibration motor. The goal is a wrist-worn alarm that combines motion sensing with a physical wake-up signal.
 
-This repository contains the PCB design and its supplied fabrication exports. Firmware, Dashboard, and assembled-device test results are not included. Motion-based control and wake-up performance are not verified by the files in this repository.
-
-![AlarmShock PCB CAD render](previews/AlarmShock_pcb_3d.jpg)
-
-*Some component body models are absent.*
+This repository contains the editable PCB design, project settings and supplied component/assembly CSVs. Firmware, Dashboard, and assembled-device test results are not included. Motion-based control and wake-up performance are not verified by the files in this repository.
 
 ## Hardware
 
@@ -33,16 +29,15 @@ kicad-cli pcb drc --output DRC-review.rpt KiCad/Alarmshock_protofinal.kicad_pcb
 
 ## Current status
 
-A fresh KiCad 10.0.5 check reports 3 warnings and 0 unconnected items. Two warnings concern silkscreen at the board edge; the third is an ESP32-S3 footprint/library mismatch. The report lists the configured ignored checks. See [DRC-current.rpt](KiCad/DRC-current.rpt); the supplied older report is preserved as `DRC-original.rpt`.
+A fresh KiCad 10.0.5 check reports 3 warnings and 0 unconnected items. Two warnings concern silkscreen at the board edge; the third is an ESP32-S3 footprint/library mismatch. The report lists the configured ignored checks. These are previously recorded results, not a fresh check; the reports remain in Git history.
 
-The assembly files need reconciliation before ordering: `UPLOAD_BOM_no_M1_no_U3.csv` and its CPL omit the motor and BMI160, and the board's R4 value is `e` while the assembly BOM lists 4.7 kOhm. These files are preserved as supplied. Gerbers are existing exports, not a fabrication approval. Battery charging, assembled operation, haptic output and wake-up reliability have not been verified in this review.
+The assembly files need reconciliation before ordering: `UPLOAD_BOM_no_M1_no_U3.csv` and its CPL omit the motor and BMI160, and the board's R4 value is `e` while the assembly BOM lists 4.7 kOhm. These files are preserved as supplied. The earlier Gerber exports remain in Git history and are not a fabrication approval. Battery charging, assembled operation, haptic output and wake-up reliability have not been verified in this review.
 
 ## Files
 
-- `KiCad/`: editable board, project settings, component list and DRC reports.
-- `gerbers/`: supplied copper, mask, paste, silkscreen, outline and drill exports.
-- `previews/`: a 3D JPG exported from the unchanged board.
-- `UPLOAD_BOM_no_M1_no_U3.csv` and `UPLOAD_CPL_no_M1_no_U3.csv`: supplied partial assembly files.
-- `SHA256SUMS.txt`: checksums for the repository files.
+- `KiCad/Alarmshock_protofinal.kicad_pcb`: unchanged editable board.
+- `KiCad/Alarmshock_protofinal.kicad_pro`: unchanged project settings.
+- `KiCad/Alarmshock_protofinal.csv`: supplied component list.
+- `UPLOAD_BOM_no_M1_no_U3.csv` and `UPLOAD_CPL_no_M1_no_U3.csv`: supplied partial assembly files; review the discrepancies above before ordering.
 
-The supplied folder had no development Git history to import. Original project files remain unchanged. Personal concept notes and local KiCad preferences are excluded. No license has been added.
+No schematic was supplied. This cleanup did not reconstruct or change the design. Generated exports, previews, reports and the old checksum inventory were removed from the current tree; earlier versions remain recoverable in Git history. No license has been added.
